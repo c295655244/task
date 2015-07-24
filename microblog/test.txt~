@@ -1,0 +1,5 @@
+python manage.py syncdb
+python manage.py makemigrations
+1.转发后其他人看不到
+2.留言不能删除
+当个人主页需要显示所有查看用户信息时，就要依靠uid

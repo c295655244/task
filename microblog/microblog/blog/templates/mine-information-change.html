@@ -1,0 +1,548 @@
+
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>观海微博  --  凝聚思想的碰撞</title>
+<link rel="icon" type="image/png" href="/media/images/favicon.png" />
+<link rel="shortcut icon" href="/media/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<script type="text/javascript" src="/static/js/function.js"></script>
+<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/ajax_csrf.js"></script>
+<script type="text/javascript">
+$(function () {
+  $('#letter-text').bind('blur focus keydown keypress keyup',function(){countLetsLetter(this)});
+  $('.nav_tab').mouseover(function(){$(this).addClass('focus')});
+  $('.nav_tab').mouseout(function(){$(this).removeClass('focus')});
+  $('.dropdown-toggle').mouseenter(function(){$(this).next().show()});
+  $('.dropdown-toggle').mouseleave(function(){$(this).next().hide()});
+  $('.dropdown-menu').mouseenter(function(){$(this).show();$(this).prev().addClass('focus')});
+  $('.dropdown-menu').mouseleave(function(){$(this).hide();$(this).prev().removeClass('focus')});
+  // $('a[rel=tooltip]').tooltip();
+//jquery 定义结尾标记 
+})
+
+var jiathis_config={
+  siteNum:15,
+  sm:"weixin,qzone,tsina,tqq,renren,",
+  url:"",
+    title:"",
+    summary:"",
+    pic:"",
+    data_track_clickback:true,
+  appkey:{
+    "tsina":"3947945761",
+    "tqq":"801134832"
+  }
+}
+</script>
+
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="/static/css/wysiwyg-color.css" rel="stylesheet" type="text/css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap-ie6.min.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="/static/css/ie.css">
+<![endif]-->
+<link href="/static/css/common.css" rel="stylesheet" type="text/css">
+<link href="/static/skins/default/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="">
+
+<style type="text/css">
+.dropdown-menu.roundright {margin-top:-1px; -webkit-border-top-left-radius:0; -moz-border-top-left-radius: 0; border-top-left-radius: 0; min-width: 100px;}
+.dropdown-menu.roundleft {margin-top:-1px; -webkit-border-top-right-radius:0; -moz-border-top-right-radius: 0; border-top-right-radius: 0; min-width: 100px;}
+</style>
+<div class="WB_global_header">
+<div class="header-bg">
+<div class="header">
+<div class="logo"><a href="/home/"></a></div>
+<div class="header_nav">
+
+<div class="nav_title nav_search">
+    <form class="form-search" action="">
+    <div class="input-append">
+      <input class="header-search-query" style="font-size:12px;margin-left:330px;padding: 2px 10px; width:250px; display:inline;"  placeholder="搜索分享、找人" type="text">
+      <input name="type" type="hidden" value="share" />
+      <div class="btn-group" style="display:inline;">
+        <button type="button" class="btn btn-small dropdown-toggle" >搜索 <span class="caret"></span></button>
+        <ul class="dropdown-menu" style="min-width: auto;  margin-top:12px; *margin-top:0;">
+          <li><a onclick="headerSearch('content')" href="javascript:void(0);">微博</a></li>
+          <li><a onclick="headerSearch('user')" href="javascript:void(0);">用户</a></li>
+        </ul>
+      </div>
+     </div>
+    </form>
+</div>
+
+<div class="nav_title" ><a class="nav_tab" style="padding-left:5px; padding-right:0px; width:50px; overflow:hidden;" target="_top"  href="/{{user.user_login}}/"><i class="ellipsis">{{user.user_name}}</i></a></div>
+
+<div class="nav_title dropdown"><a class="nav_tab dropdown-toggle ico" target="_top" title="设置"  href="/set/"><i class="W_icon ico_nav_set">设置</i></a>
+<ul class="dropdown-menu pull-right roundleft">
+<li><a href="/set/">账号设置</a></li>
+</ul>
+</div>
+<div class="nav_title"><a class="nav_tab ico" target="_top" title="退出"  href="/logout/"><i class="W_icon ico_nav_cancel">退出</i></a>
+<form action="/loginout/" method="post" class="hide" id="loginOutForm">
+<input type="hidden" name="next" value="/" />
+<div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='smIGf606YwqYjSmfubnFygMobHhJJxia' /></div>
+</form>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div style="height:60px; _height:20px;"></div>
+
+
+<link href="/static/css/uploadify.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/photoswipe.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/static/js/jquery.autoTextarea.js"></script>
+<script type="text/javascript" src="/static/js/jquery.uploadify.js"></script>
+<script type="text/javascript" src="/static/js/home.js"></script>
+<script type="text/javascript" src="/static/js/klass.min.js"></script>
+<script type="text/javascript" src="/static/js/code.photoswipe.jquery-3.0.5.min.js"></script>
+<script type="text/javascript">
+$(function (){
+  type=request('type','');
+  key=request('key',false);
+  if(type=='tag' && key){
+  key=decodeURI(key)
+  getTag(key);
+  }
+  else if(type=='content' && key){
+  key=decodeURI(key)
+  getContent(key);
+  }
+  else{
+  //加载分享列表
+  listPage=request('page',1);
+  listType=request('list','all');
+  listClass=request('class','1');
+  listUid=request('uid',{{present_user.user_id}});
+  $('.listpage-input').val(listPage);
+  fetchshares(listType,listClass,listPage,listUid);
+  $('.tab-class-btn a').each(function(){
+    if($(this).data('id')==listClass){
+      $(this).parent().find('a').removeClass('select');
+      $(this).addClass('select');
+      }
+    });
+  }
+  //判断是否显示消息
+  
+  $('#MSG_LIST').delay(5000).fadeIn('fast',function(){$('#MSG_BTN').addClass('focus')}).delay(5000).fadeOut('fast',function(){$('#MSG_BTN').removeClass('focus')});
+   
+  
+  //每隔5分钟执行检测更新函数
+  setInterval(function(){checkUpdateShare();},300000);
+  
+  $('.photos-list img').live('click',function(){
+    $(this).toggleClass('middle-photo');
+    $(this).parent().find('a').toggleClass('unvisible');
+    }); 
+//jquery 定义结尾标记 
+})
+
+function callback(data){
+  type='image';
+  txt= data;
+  img='/media/upload/images/thumb/'+txt;
+  url=txt;
+  kindInsert(type,txt,img,url);
+  closePanel();
+  }
+</script>
+
+
+  </div>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+<div style="height:60px; _height:20px;"></div>
+<link href="/static/media/css/photoswipe.css" type="text/css" rel="stylesheet">
+<!-- <script type="text/javascript" src="/static/js/other-home.js"></script>
+<script type="text/javascript" src="/static/js/klass.js"></script>
+<script type="text/javascript" src="/static/js/code.js"></script> -->
+<div class="other_main_blog clearfix" style="margin-top:-20px;">
+  <div class="other_main_top">
+<div class="other_top" style=""></div>
+
+
+
+<div class="other_user_info clearfix" style="position:relative;">
+  <div class="other_gravatar_panel shadow">
+    <div class="other_gravatar"><img src="/static/media/images/male_50.png"></div>
+    <ul class="other_sns clearfix">
+      <li class="line-right"><a  target="_self"><strong>{{present_user.follow_count}}</strong><span>关注 </span></a></li>
+      <li class="line-right"><a  target="_self"><strong>{{present_user.fans_count}}</strong><span>粉丝 </span></a></li>
+      <li><a  target="_self"><strong>{{present_user.msg_count}}</strong><span>微博数 </span></a></li>
+    </ul>
+  </div>
+  <div class="other_info">
+    <p class="clearfix"><span class="name">{{present_user.user_name}}</span><em class="W_icon pull-left grade0" title="普通会员"></em><span></span></p>
+    <p class="muted">该用户什么也没有留下</p>
+    <p class="font12"> <em class="W_icon male" title="男"></em>
+      
+     
+    <p class="font12"><span class="btn btn-small btn-warning" style="margin-right:15px;"> <i class="icon-plus icon-white"></i><a class="addfollow" onclick="Follow(this,'{{present_user.user_id}}','add')" href="javascript:void(0);"> 关注</a> </span> </p>
+  </div>
+  <div class="other_daren">
+    <div class="daren line-left">
+    <br>
+      <p><span class="muted"><a class="muted"  target="_blank">积分</a>: </span><span class="badge badge-warning">0</span></p>
+      <p><span class="muted"><a  target="_blank">观海币</a>: </span><span class="badge badge-important">0</span></p>
+      <p><span class="muted">节操值: </span><span class="badge">-10</span></p>
+    </div>
+  </div>
+</div>
+<div class="other_nav_bg">
+<ul class="nav nav-tabs other_nav clearfix">
+<li ><a style="font: 16px/40px 'Microsoft Yahei';" href="/{{present_user.user_login}}/" target="_self"><i class="Tab_bg "><span class="Tab_icon profile"></span></i>他的首页</a></li>
+<li class="active"><a style="font: 16px/40px 'Microsoft Yahei';" href="/{{present_user.user_login}}/information/"><i class="Tab_bg select"><span class="Tab_icon info"></span></i>个人资料</a></li>
+
+
+<li><a style="font: 16px/40px 'Microsoft Yahei';" href="/{{present_user.user_login}}/message/"><i class="Tab_bg"><span style="margin-top: 4px; padding:0;" class="Tab_icon message"></span></i>留言板</a></li>
+
+</ul>
+</div>
+</div>
+  <div class="other_bg clearfix">
+
+
+    <div class="other_main_left">
+
+    <a name="tab" id="tab"></a>
+<script type="text/javascript">
+$(function (){
+  fetchshares(request('list'),request('class'),request('page'),'{{present_user.user_id}}');
+  listPage=request('page',1);
+  listType=request('list','all');
+  listClass=request('class','');
+  listUid=request('uid','{{present_user.user_id}}');
+  $('.tab-class-btn a').each(function(){
+    if($(this).data('id')==listClass){
+      $(this).parent().find('a').removeClass('select');
+      $(this).addClass('select');
+      }
+    });
+
+//jquery 定义结尾标记 
+})
+</script>
+<div class="font12" style="position:relative">
+<div class="BG_btn tab-class">
+<div class="tab-class-btn clearfix"><a class="select" onclick="getList({'class':'1','page':1,'displayed':0,'uid':{{present_user.user_id}}})" href="javascript:void(0);">&nbsp;&nbsp;全&nbsp;&nbsp;部</a></div>
+</div>
+
+
+
+
+
+<div class="register_form pull-left">
+<div class="form-horizontal">
+
+<div class="control-group">
+<label class="control-label">昵称:</label>
+<input type="text" maxlength="30" name="username" id="id_username">
+</div>
+
+<div class="control-group">
+<label class="control-label">性别:</label>
+<input type="text" maxlength="30" name="username" id="id_username">
+</div>
+
+<div class="control-group">
+<label  class="control-label">年龄:</label>
+<input type="text" maxlength="30" name="username" id="id_username">
+
+
+</div>
+
+<div class="control-group">
+<label class="control-label">职业:</label>
+<input type="text" maxlength="30" name="username" id="id_username">
+</div>
+
+<div class="control-group">
+<label  class="control-label">居住地:</label>
+<input type="text" maxlength="30" name="username" id="id_username">
+</div>
+
+<div class="control-group">
+<label  class="control-label">邮箱:</label>
+<input type="text" maxlength="30" name="username" id="id_username">
+</div>
+
+<div class="control-group">
+<label  class="control-label">个性签名:</label>
+<input type="text" maxlength="100" name="username" id="id_username">
+</div>
+
+
+<button style="margin-left:120px;"   onclick="javascript:window.location.href='/{{present_user.user_login}}/change/'"   class="btn btn-primary" > 修改资料 </button>
+
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+<div class="other_main_right">
+<div class="other_right_rec">
+<div class="other_right_title img40 font12"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td width="50"><a data-uid="{{user.user_id}}" class="userinfolink" href="/{{user.user_login}}/"><img src="/static/media/images/male_50.png"></a></td><td><a href="/{{present_user.user_login}}/relation/"><strong>微关系</strong></a><br><span class="muted">我们之间的共同关系</span></td>
+  </tr>
+</tbody></table>
+</div>
+<div class="other_right_content">
+
+<div class="line-bottom clearfix font12 "><a class="pull-left normal" href="/{{present_user.user_login}}/relation/">共同关注的</a></div>
+
+<ul class="list_big clearfix">
+
+{% for same in same_user %}
+
+<li><a data-uid="{{same.user_id}}" class="userinfolink" href="http://127.0.0.1:8000/{{same.user_login}}/" title="{{same.user_username}}"><img src="/static/media/images/male_50.png"></a><p class="name"><a data-uid="{{same.user_id}}" class="userinfolink normal" href="http://127.0.0.1:8000/{{same.user_login}}/">{{same.user_name}}</a></p></li>
+
+{% endfor %}
+
+
+
+
+</ul>
+
+
+<div class="line-bottom clearfix font12 "><a class="pull-left normal" href="/{{present_user.user_login}}/relation/">他关注的</a><a class="pull-right" href="/{{present_user.user_login}}/relation/"><span>更多»</span></a></div>
+<ul class="list_big clearfix">
+
+
+{% for follow in follow_user %}
+
+<li><a data-uid="{{follow.user_id}}" class="userinfolink" href="http://127.0.0.1:8000/{{follow.user_login}}/" title="{{follow.user_username}}"><img src="/static/media/images/male_50.png"></a><p class="name"><a data-uid="{{follow.user_id}}" class="userinfolink normal" href="http://127.0.0.1:8000/{{follow.user_login}}/">{{follow.user_name}}</a></p></li>
+
+{% endfor %}
+
+
+
+
+
+
+
+</ul>
+<div class="line-bottom clearfix font12 "><a class="pull-left normal" href="http://hi.bxn.com/c295655244/?from=follow&amp;tag=2#tab">他的粉丝 </a><a class="pull-right" href="/{{present_user.user_login}}/relation/"><span>更多»</span></a></div>
+<ul class="list_big clearfix">
+
+
+
+{% for fans in fans_user %}
+
+<li><a data-uid="{{fans.user_id}}" class="userinfolink" href="http://127.0.0.1:8000/{{fans.user_login}}/" title="{{fans.user_username}}"><img src="/static/media/images/male_50.png"></a><p class="name"><a data-uid="{{fans.user_id}}" class="userinfolink normal" href="http://127.0.0.1:8000/{{fans.user_login}}/">{{fans.user_name}}</a></p></li>
+
+{% endfor %}
+
+
+
+
+
+
+</ul>
+</div>
+
+
+<div class="other_right_title font12"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td><a href="/{{present_user.user_login}}/message/"><strong>留言板</strong></a><br><span class="muted">想对他说点什么？</span></td>
+  </tr>
+</tbody></table>
+</div>
+<div class="other_right_content">
+<textarea id="message_fu_input" style="width:310px; resize: none;" rows="3" placeholder="写点什么..."></textarea>
+<div class="row-fluid">
+<div class="span1" style="margin-left:0;"><a class="W_icon icon_emot" title="插入表情" onclick="emotPanel(this,$('#message_fu_input'))" href="javascript:void(0);">表情</a></div>
+<div class="span3 offset4 text-right" style="float:right;"><button onclick="addMessage({{present_user.user_id}},'message_fu_input','messages_fu')" type="button" id="message_fu_btn" class="btn btn-small btn-warning">发表</button></div>
+</div>
+<div id="messages_fu" class="font12">
+
+
+</div>
+</div>
+<div class="other_right_content">
+
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<div class="footer" style="margin-top:20px; padding-bottom:20px;">
+<p class="copyright_link">Copyright © 2015 ChenChen all rights reserved. | <a href="http://www.hitwh.edu.cn/" target="_blank">HITWH</a> | <a href="http://127.0.0.1:8000/home/" target="_blank">观海微博</a> | <a href="http://bbs.ghtt.net" target="_blank">社交应用</a></p>
+</div> 
+
+<!--消息显示面板--> 
+<span class="alert text-center tippanel"></span> 
+<!--赞列表显示面板-->
+<div class="popover bottom up_list">
+  <div class="arrow"></div>
+  <div class="popover-content clearfix">
+    <div class="row-fluid"></div>
+  </div>
+</div>
+
+<!--插入表情框-->
+<div class="popover bottom emotpanel">
+  <div class="arrow" style="left:3%;"></div>
+  <h3 class="popover-title clearfix"><span class="pull-left">插入表情</span>
+    <button type="button" onclick="closePanel()" class="close">×</button>
+  </h3>
+  <div class="popover-content">
+    <div class="W_loading"><span>正在加载中，请稍候...</span></div>
+  </div>
+</div>
+<!--模板对话框-->
+<div id="TemplatePanel" class="modal hide font12" tabindex="-1">
+  <div class="modal-header">
+    <button type="button" class="close" onclick="$('#TemplatePanel').hide()">×</button>
+    <h6>个性化模板设置</h6>
+  </div>
+  <div class="modal-body">
+    <ul class="nav nav-tabs">
+    <li class="active"><a href="#templates" data-toggle="tab">模板套装</a></li>
+    <li><a href="#covers" data-toggle="tab">个人主页封面</a></li>
+    </ul>
+    <div class="tab-content">
+    <div class="tab-pane active" id="templates">
+    <ul class="template-list clearfix">
+  
+    </ul>
+    </div>
+    <div class="tab-pane" id="covers">
+    <ul class="cover-list clearfix">
+    
+    
+    </ul>
+    </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="row-fluid">
+      <div class="span3 offset4 pull-right">
+        <button onclick="saveTemplate()" class="btn btn-success">保存</button>
+        <button onclick="$('#TemplatePanel').hide()" class="btn">取消</button>
+      </div>
+    </div>
+  </div>
+  <form class="hide" action="/settemplate/" method="post" id="templateForm">
+  <input name="template" id="template" value="" type="hidden">
+  <input name="cover" id="cover" value="" type="hidden">
+  <div style="display:none"><input name="csrfmiddlewaretoken" value="yDVHiEFjobYSrouRRCggg3m19n23jtyA" type="hidden"></div>
+  </form>
+</div>
+<!--私信对话框-->
+<div id="Letter" class="modal hide fade font12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h6 id="myModalLabel">发私信</h6>
+  </div>
+  <div class="modal-body">
+    <div class="row-fluid">
+    <div class="span12" style="margin-left:0;">
+        <div class="span8" style="margin-left:0;">发给： <input id="letter-nickname" class="input-medium" type="text"> <em class="muted"> 请输入对方昵称</em></div>
+        <div class="span4 pull-right num"><b>还可以输入</b><span class="gray">300</span>字</div></div>
+      内容： <textarea rows="4" id="letter-text" style="width:470px;" placeholder="请输入私信内容"></textarea>
+    </div>    
+  </div>
+  <div class="modal-footer">
+    <div class="row-fluid">
+      <div class="span5" style="margin-left:0; text-align:left;"> <a class="W_icon icon_emot" title="插入表情" onclick="zhuanEmotPanel(this,$('#letter-text'))" href="javascript:void(0);"></a></div>
+      <div class="span3 offset4 pull-right">
+        <button onclick="sendLetter(this,'#Letterbox')" id="letter-btn" class="btn btn-small btn-warning">发送</button>
+      </div>
+    </div>
+  </div>
+  <!--插入表情框-->
+  <div class="popover bottom zhuanemotpanel hide">
+    <div class="arrow" style="left:3%;"></div>
+    <h3 class="popover-title clearfix"><span class="pull-left">插入表情</span>
+      <button type="button" onclick="closeZhuanPanel()" class="close">×</button>
+    </h3>
+    <div class="popover-content">
+      <div class="W_loading"><span>正在加载中，请稍候...</span></div>
+    </div>
+  </div>
+</div>
+<!-- 转发对话框 -->
+<div id="zhuanShare" class="modal hide fade font12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h6 id="myModalLabel">转发分享</h6>
+  </div>
+  <div class="modal-body">
+    <div class="quote_share clearfix">
+      <div class="showLine"></div>
+      <a class=" pull-right" onclick="fullZhuan(this)" title="展开" href="javascript:void(0);"><i class="icon-chevron-down"></i></a></div>
+    <div class="num">发言请遵守社区公约，<b>还可以输入</b><span class="gray">140</span>字</div>
+    <textarea rows="4" id="zhuan-text" style=" width:515px;" title="转发分享内容" placeholder="请输入转发理由"></textarea>
+  </div>
+  <div class="modal-footer">
+    <div class="row-fluid">
+      <div class="span1" style="margin-left:0;"> <a class="W_icon icon_emot" title="插入表情" onclick="zhuanEmotPanel(this,$('#zhuan-text'))" href="javascript:void(0);"></a></div>
+      <div class="span4 text-left">
+        <label class="font12 checkbox">
+          <input type="checkbox">
+          <span></span></label>
+      </div>
+      <div class="span3 offset4 pull-right">
+        <button id="zhuan-btn" class="btn btn-small btn-warning">转发</button>
+      </div>
+    </div>
+  </div>
+  <!--插入表情框-->
+  <div class="popover bottom zhuanemotpanel hide">
+    <div class="arrow" style="left:3%;"></div>
+    <h3 class="popover-title clearfix"><span class="pull-left">插入表情</span>
+      <button type="button" onclick="closeZhuanPanel()" class="close">×</button>
+    </h3>
+    <div class="popover-content">
+      <div class="W_loading"><span>正在加载中，请稍候...</span></div>
+    </div>
+  </div>
+</div>
+<a style="display: none;" id="scrollTop" onclick="scrolltoTop()" href="javascript:void(0);" title="回到顶部"></a>
+
+
+
+
+
+<a id="scrollTop" onclick="scrolltoTop()" href="javascript:void(0);" title="回到顶部"></a>
+</body>
+</html>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/xiuxiu.js" type="text/javascript"></script>
+<script src="/static/js/jquery.lazyload.min.js" type="text/javascript"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="/static/js/bootstrap-ie.js"></script>
+<![endif]-->

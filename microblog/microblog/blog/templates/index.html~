@@ -1,0 +1,1077 @@
+
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>喜社区-广场-随时随地分享你的喜悦-喜"阅"人生</title>
+<link rel="icon" type="image/png" href="media/images/favicon.png" />
+<link rel="shortcut icon" href="media/images/favicon.ico" />
+<link rel="apple-touch-icon" href="media/images/apple-touch-icon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta name="keyword" content="喜社区, 喜文化, 喜文化社区, 喜婚嫁, 喜升迁, 喜知己, 喜生活, 喜悦人生, 喜阅人生" />
+<meta name="description" content="“传递你我喜悦，分享彼此精彩”，喜文化社区采用“自媒体”的方式诠释“四喜文化”（喜婚嫁、喜升迁、喜知己、喜生活）。互联网用户可以通过留言、上传照片、圈子分享等方式参与品牌互动，传播喜文化，宣扬正能量，妆点美好生活。" />
+<script type="text/javascript" src="static/js/function.js"></script>
+<script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="static/js/ajax_csrf.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('#letter-text').bind('blur focus keydown keypress keyup',function(){countLetsLetter(this)});
+	$('.nav_tab').mouseover(function(){$(this).addClass('focus')});
+	$('.nav_tab').mouseout(function(){$(this).removeClass('focus')});
+	$('.dropdown-toggle').mouseenter(function(){$(this).next().show()});
+	$('.dropdown-toggle').mouseleave(function(){$(this).next().hide()});
+	$('.dropdown-menu').mouseenter(function(){$(this).show();$(this).prev().addClass('focus')});
+	$('.dropdown-menu').mouseleave(function(){$(this).hide();$(this).prev().removeClass('focus')});
+	$('a[rel=tooltip]').tooltip();
+//jquery 定义结尾标记	
+})
+
+var jiathis_config={
+	siteNum:15,
+	sm:"weixin,qzone,tsina,tqq,renren,",
+	url:"",
+    title:"",
+    summary:"",
+    pic:"",
+    data_track_clickback:true,
+	appkey:{
+		"tsina":"3947945761",
+		"tqq":"801134832"
+	}
+}
+</script>
+
+<link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="static/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="static/css/wysiwyg-color.css" rel="stylesheet" type="text/css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap-ie6.min.css">
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="/static/css/ie.css">
+<![endif]-->
+<link href="static/css/common.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">body { background:url(media/images/index_bg.gif) #FFF;} .nav .active{ font-weight:bold;} .nav a { color:#555555;}</style>
+
+</head>
+
+<body class="">
+
+<style type="text/css">
+.dropdown-menu.roundright {margin-top:-1px; -webkit-border-top-left-radius:0; -moz-border-top-left-radius: 0; border-top-left-radius: 0; min-width: 100px;}
+.dropdown-menu.roundleft {margin-top:-1px; -webkit-border-top-right-radius:0; -moz-border-top-right-radius: 0; border-top-right-radius: 0; min-width: 100px;}
+</style>
+<div class="WB_global_header">
+<div class="header-bg">
+<div class="header">
+<div class="logo"><a href="index.html"></a></div>
+<div class="header_nav">
+<div class="nav_title current"><a class="nav_tab" target="_top"  href="home/index.html"><i>首页</i></a></div>
+<div class="nav_title dropdown"><a class="nav_tab dropdown-toggle"  target="_top"  href="home/index.html"><i>喜分享<b class="caret"></b></i></a>
+<ul class="dropdown-menu roundright">
+<li><a href="home/index.html?class=1">喜生活</a></li><li><a href="home/index.html?class=2">喜婚嫁</a></li><li><a href="home/index.html?class=3">喜升迁</a></li><li><a href="home/index.html?class=4">喜知己</a></li>
+</ul>
+</div>
+<div class="nav_title dropdown"><a class="nav_tab dropdown-toggle"  target="_top"  href="subjects/index.html"><i>喜活动<b class="caret"></b></i></a>
+<ul class="dropdown-menu roundright">
+<li><a href="subjects/index.html">话题社</a></li>
+<li><a href="polls/index.html">有奖调查</a></li>
+<li><a href="appraises/index.html">评选活动</a></li>
+<li><a href="hipay/index.html?leftnav=14">礼品兑换</a></li>
+</ul>
+</div>
+<div class="nav_title dropdown"><a class="nav_tab dropdown-toggle"  target="_top"  href="myblog/index.html?leftnav=9"><i>记录<b class="caret"></b></i></a>
+<ul class="dropdown-menu roundright">
+<li><a href="myblog/index.html?leftnav=9">我的记录</a></li>
+<li><a href="blogs/index.html">所有记录</a></li>
+</ul>
+</div>
+<div class="nav_title dropdown"><a class="nav_tab dropdown-toggle"  target="_top"  href="photo/index.html?leftnav=10"><i>相册<b class="caret"></b></i></a>
+<ul class="dropdown-menu roundright">
+<li><a href="photo/index.html?leftnav=10">我的相册</a></li>
+<li><a href="photos/index.html">所有相册</a></li>
+</ul>
+</div>
+<!--<div class="nav_title dropdown"><a class="nav_tab dropdown-toggle"  target="_top"  href="//news/enterprise/?leftnav=14/"><i>喜资讯 <b class="caret"></b></i></a>
+<ul class="dropdown-menu roundright">
+<li><a href="/news/enterprise/?leftnav=14">报喜鸟资讯</a></li>
+<li><a href="/news/media/?leftnav=15">媒体报道</a></li>
+<li><a href="/news/discount/?leftnav=16">促销优惠</a></li>
+<li><a href="/news/entertainment/?leftnav=17">娱乐资讯</a></li>
+</ul>
+</div>-->
+<div class="nav_title nav_search">
+    <form class="form-search" action="index.html">
+    <div class="input-append">
+      <input class="header-search-query" style="font-size:12px;padding: 2px 10px; width:120px; display:inline;"  placeholder="搜索分享、找人" type="text">
+      <input name="type" type="hidden" value="share" />
+      <div class="btn-group" style="display:inline;">
+        <button type="button" class="btn btn-small dropdown-toggle" >搜索 <span class="caret"></span></button>
+        <ul class="dropdown-menu" style="min-width: auto;  margin-top:12px; *margin-top:0;">
+          <li><a onclick="headerSearch('content')" href="javascript:void(0);">喜分享</a></li>
+          <li><a onclick="headerSearch('user')" href="javascript:void(0);">用户</a></li>
+          <li><a onclick="headerSearch('tag')" href="javascript:void(0);">标签</a></li>
+        </ul>
+      </div>
+     </div>
+    </form>
+</div>
+
+<div class="nav_title" ><a class="nav_tab" style="padding-left:15px; padding-right:15px; margin-left:10px;" target="_top" onclick="document.location.href='/login/?next='+encodeURIComponent(document.location.pathname+document.location.search);"  href="javascript:void(0);">登录</a></div>
+<div class="nav_title" ><span class="nav_sep"> | </span></div>
+<div class="nav_title" ><a class="nav_tab" style="padding-left:15px; padding-right:15px;" target="_top"  href="reg/index.html">注册</a></div>
+
+</div>
+</div>
+</div>
+</div>
+<div style="height:60px; _height:20px;"></div>
+ 
+
+<link href="static/css/imageturn.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/login.js"></script>
+<script type="text/javascript">
+$(function () {
+	var activeIndex=0;
+	$('.nav-map').parent().bind('mouseover',function(){
+		$('#articleImgLink,#articleHeaderLink,#articleDescLink').prop('href',$(this).find('.nav-map').data('articleurl'));
+		var $currentPath=$(this).find('.nav-map');
+		$('#currentMap').fadeOut('fast',function(){
+			$(this).prop('src',$currentPath.prop('src')).prop('alt',$currentPath.prop('alt')).fadeIn('fast');
+			});
+		$('#articleHeaderLink').text($currentPath.prop('alt'));
+		$('#articleDescLink').text($currentPath.data('articleabstract'));
+		$('.nav-map-wrapper > li').removeClass('active').find('.float-layer').css({'opacity':'0.3'});
+		$(this).parent().addClass('active').find('.float-layer').css({'opacity':'0'});
+		
+		})
+	
+	function showImage(){
+		var imageLength=$('.nav-map').length;
+		if ((activeIndex+1)<imageLength)
+			activeIndex++;
+		else
+			activeIndex=0;
+		$('.nav-map').eq(activeIndex).mouseover();
+		}
+	var rollImage=setInterval(showImage,5000);
+})
+</script>
+<div class="main_blog clearfix">
+<div class="index_main_left">
+
+<div class="mod-headlines clearfix">
+  <div class="big-map-wrapper">
+    <div class="current-map clearfix"> <a id="articleImgLink" href="http://biz.ifeng.com/news/special/xinruishengdian/" target="_blank"> <img id="currentMap" src="media/upload/editor/2014_9_18/15_9_58.jpg" alt="2014年第六届新锐艺术"> </a> </div>
+    <div class="article-wrapper">
+      <div class="mask"></div>
+      <div class="mask-border"></div>
+      <div class="article-header ellipsis"><a id="articleHeaderLink" target="_blank" href="http://biz.ifeng.com/news/special/xinruishengdian/">2014年第六届新锐艺术</a></div>
+      <div id="articleDesc" class="article-desc ellipsis"><a id="articleDescLink" href="http://biz.ifeng.com/news/special/xinruishengdian/" target="_blank">第六届报喜鸟新锐艺术人物盛典在银川报喜鸟旗舰店盛大开幕。</a></div>
+    </div>
+  </div>
+  <ul class="nav-map-wrapper">
+    <li class="active"> <a target="_blank" href="http://biz.ifeng.com/news/special/xinruishengdian/"> <img class="nav-map" src="media/upload/editor/2014_9_18/15_9_58.jpg" alt="2014年第六届新锐艺术" data-articleAbstract="第六届报喜鸟新锐艺术人物盛典在银川报喜鸟旗舰店盛大开幕。" data-articleUrl="http://biz.ifeng.com/news/special/xinruishengdian/">
+      <div class=float-layer  style="opacity: 0;filter:alpha(opacity=0);" ></div>
+      </a></li>
+    <li > <a target="_blank" href="blog/14/index.html?from=blog"> <img class="nav-map" src="media/upload/editor/2013_12_24/15_18_52.jpg" alt="积分达人评选火热进行中" data-articleAbstract="赚积分，赢喜币，更有精美礼品大放送" data-articleUrl="http://hi.bxn.com/blog/14/?from=blog">
+      <div class=float-layer   ></div>
+      </a></li>
+    <li > <a target="_blank" href="http://fashion.qq.com/zt2013/5thbaoxiniao/index.htm"> <img class="nav-map" src="media/upload/editor/2013_8_29/14_27_33.jpg" alt="新锐艺术人物大奖前十强火热投票中" data-articleAbstract="回归艺术本源 再攀艺术高峰,第五届新锐艺术人物评选火力全启，期待最具创意、最具新锐的作品！" data-articleUrl="http://fashion.qq.com/zt2013/5thbaoxiniao/index.htm">
+      <div class=float-layer   ></div>
+      </a></li>
+    <li > <a target="_blank" href="http://mini.bxn.com/happiest/"> <img class="nav-map" src="media/upload/editor/2013_7_1/14_29_33.jpg" alt="2013寻找喜阅先生活动" data-articleAbstract="8月22日 全国启动，寻找懂得生活的美好，明白生命的价值；深谙人生的真谛的你，拥有喜阅精神，分享人生故事，创造生命精彩，即可赢取报喜鸟年度“喜阅先生”封号，受邀参加报喜鸟2013新锐艺术人物颁奖盛典，零距离感受国际明星风采。" data-articleUrl="http://mini.bxn.com/happiest/">
+      <div class=float-layer   ></div>
+      </a></li>
+  </ul>
+</div>
+
+<div class="border_shadow index_block">
+<div class="index_block_title"><span class="pull-left title">热门相册</span><span class="pull-right font12"><a class="muted" href="photos/index.html">更多»</a></span></div>
+<ul class="thumbnails row-fluid index_photo_list">
+
+
+<li class="span3">
+<a href="album/index.html?id=92" title="报喜鸟总部凤凰尚品" target="_blank" >
+<img src="media/upload/images/thumb/17_21_55_346.jpg" style="width:164px;"><span class="hot_sign"></span>
+</a>
+</li>
+
+
+
+<li class="span3">
+<a href="album/index.html?id=83" title="苏州之旅" target="_blank" >
+<img src="media/upload/images/thumb/20_44_1_228.jpg" style="width:164px;"><span class="hot_sign"></span>
+</a>
+</li>
+
+
+
+<li class="span3">
+<a href="album/index.html?id=74" title="现实在痛也别望了微笑" target="_blank" >
+<img src="media/upload/images/thumb/13_52_53_599.jpg" style="width:164px;"><span class="hot_sign"></span>
+</a>
+</li>
+
+
+
+<li class="span3">
+<a href="album/index.html?id=87" title="楠溪江" target="_blank" >
+<img src="media/upload/images/thumb/20_40_45_490.jpg" style="width:164px;"><span class="hot_sign"></span>
+</a>
+</li>
+
+
+</ul>
+</div>
+<div class="border_shadow index_block">
+<div class="index_block_title"><span class="pull-left title">最新相册</span><span class="pull-right font12"><a class="muted" href="photos/index.html">更多»</a></span></div>
+<ul class="thumbnails row-fluid index_photo_list">
+
+
+<li class="span3">
+<a href="album/index.html?id=103" title="报喜鸟运动会" target="_blank" >
+<img src="media/upload/images/thumb/17_34_5_234.jpg" style="width:164px;"><span class="new_sign"></span>
+</a>
+</li>
+
+
+
+<li class="span3">
+<a href="album/index.html?id=102" title="秋色" target="_blank" >
+<img src="media/upload/images/thumb/14_0_11_7.jpg" style="width:164px;"><span class="new_sign"></span>
+</a>
+</li>
+
+
+
+<li class="span3">
+<a href="album/index.html?id=101" title="北京" target="_blank" >
+<img src="media/upload/images/thumb/18_25_33_658.jpg" style="width:164px;"><span class="new_sign"></span>
+</a>
+</li>
+
+
+
+<li class="span3">
+<a href="album/index.html?id=100" title="婚礼" target="_blank" >
+<img src="media/upload/images/thumb/15_53_13_939.gif" style="width:164px;"><span class="new_sign"></span>
+</a>
+</li>
+
+
+</ul>
+</div>
+<div class="border_shadow index_block">
+<div class="index_block_title"><span class="pull-left title">最新入驻</span><span class="pull-right font12"><a class="muted" href="find/i/index.html">更多»</a></span></div>
+<ul class="thumbnails row-fluid index_photo_list">
+
+<li class="span3" style="margin-left:0; position:relative;">
+    <a class="gravatar" href="xiaopolou1327/index.html" title="刘彦楼"><img src="media/images/grey.gif" onLoad="getGravatar(this,'xiaopolou1327.jpg',1,180)" /></a><span class="new_sign"></span>
+    <p class="clearfix ellipsis font14" style="margin-top:6px;"><a class="pull-left" href="xiaopolou1327/index.html">刘彦楼</a><img src="media/images/grey.gif" onLoad="setGrade(this,0)" /></p>
+    <p class="muted ellipsis font12" style=" width:164px;overflow:hidden;"><img src="media/images/grey.gif" onLoad="outputTextFace(this,'火星用户，暂无记录')" /></p>
+    <p><a class="btn btn-mini font12" href="xiaopolou1327/index.html"><i class="icon-plus"></i>加关注</a></p>
+</li>
+
+<li class="span3" style=" position:relative;">
+    <a class="gravatar" href="qwer456789/index.html" title="随缘"><img src="media/images/grey.gif" onLoad="getGravatar(this,'qwer456789.jpg',1,180)" /></a><span class="new_sign"></span>
+    <p class="clearfix ellipsis font14" style="margin-top:6px;"><a class="pull-left" href="qwer456789/index.html">随缘</a><img src="media/images/grey.gif" onLoad="setGrade(this,0)" /></p>
+    <p class="muted ellipsis font12" style=" width:164px;overflow:hidden;"><img src="media/images/grey.gif" onLoad="outputTextFace(this,'火星用户，暂无记录')" /></p>
+    <p><a class="btn btn-mini font12" href="qwer456789/index.html"><i class="icon-plus"></i>加关注</a></p>
+</li>
+
+<li class="span3" style=" position:relative;">
+    <a class="gravatar" href="shengxiazhe/index.html" title="Charles"><img src="media/images/grey.gif" onLoad="getGravatar(this,'shengxiazhe.jpg',1,180)" /></a><span class="new_sign"></span>
+    <p class="clearfix ellipsis font14" style="margin-top:6px;"><a class="pull-left" href="shengxiazhe/index.html">Charles</a><img src="media/images/grey.gif" onLoad="setGrade(this,0)" /></p>
+    <p class="muted ellipsis font12" style=" width:164px;overflow:hidden;"><img src="media/images/grey.gif" onLoad="outputTextFace(this,'火星用户，暂无记录')" /></p>
+    <p><a class="btn btn-mini font12" href="shengxiazhe/index.html"><i class="icon-plus"></i>加关注</a></p>
+</li>
+
+<li class="span3" style=" position:relative;">
+    <a class="gravatar" href="iii123456/index.html" title="时光不老_"><img src="media/images/grey.gif" onLoad="getGravatar(this,'',2,180)" /></a><span class="new_sign"></span>
+    <p class="clearfix ellipsis font14" style="margin-top:6px;"><a class="pull-left" href="iii123456/index.html">时光不老_</a><img src="media/images/grey.gif" onLoad="setGrade(this,0)" /></p>
+    <p class="muted ellipsis font12" style=" width:164px;overflow:hidden;"><img src="media/images/grey.gif" onLoad="outputTextFace(this,'火星用户，暂无记录')" /></p>
+    <p><a class="btn btn-mini font12" href="iii123456/index.html"><i class="icon-plus"></i>加关注</a></p>
+</li>
+
+<li class="span3" style="margin-left:0; position:relative;">
+    <a class="gravatar" href="zxp1977/index.html" title="zxp哭泣的拳头1977"><img src="media/images/grey.gif" onLoad="getGravatar(this,'',1,180)" /></a><span class="new_sign"></span>
+    <p class="clearfix ellipsis font14" style="margin-top:6px;"><a class="pull-left" href="zxp1977/index.html">zxp哭泣的拳头1977</a><img src="media/images/grey.gif" onLoad="setGrade(this,0)" /></p>
+    <p class="muted ellipsis font12" style=" width:164px;overflow:hidden;"><img src="media/images/grey.gif" onLoad="outputTextFace(this,'火星用户，暂无记录')" /></p>
+    <p><a class="btn btn-mini font12" href="zxp1977/index.html"><i class="icon-plus"></i>加关注</a></p>
+</li>
+
+<li class="span3" style=" position:relative;">
+    <a class="gravatar" href="13581646955/index.html" title="刪除優郁"><img src="media/images/grey.gif" onLoad="getGravatar(this,'13581646955.jpg',1,180)" /></a><span class="new_sign"></span>
+    <p class="clearfix ellipsis font14" style="margin-top:6px;"><a class="pull-left" href="13581646955/index.html">刪除優郁</a><img src="media/images/grey.gif" onLoad="setGrade(this,0)" /></p>
+    <p class="muted ellipsis font12" style=" width:164px;overflow:hidden;"><img src="media/images/grey.gif" onLoad="outputTextFace(this,'火星用户，暂无记录')" /></p>
+    <p><a class="btn btn-mini font12" href="13581646955/index.html"><i class="icon-plus"></i>加关注</a></p>
+</li>
+
+<li class="span3" style=" position:relative;">
+    <a class="gravatar" href="bzeracn/index.html" title="硅谷一朵花"><img src="media/images/grey.gif" onLoad="getGravatar(this,'',1,180)" /></a><span class="new_sign"></span>
+    <p class="clearfix ellipsis font14" style="margin-top:6px;"><a class="pull-left" href="bzeracn/index.html">硅谷一朵花</a><img src="media/images/grey.gif" onLoad="setGrade(this,0)" /></p>
+    <p class="muted ellipsis font12" style=" width:164px;overflow:hidden;"><img src="media/images/grey.gif" onLoad="outputTextFace(this,'火星用户，暂无记录')" /></p>
+    <p><a class="btn btn-mini font12" href="bzeracn/index.html"><i class="icon-plus"></i>加关注</a></p>
+</li>
+
+<li class="span3" style=" position:relative;">
+    <a class="gravatar" href="luojian1991/index.html" title="罗无双"><img src="media/images/grey.gif" onLoad="getGravatar(this,'',1,180)" /></a><span class="new_sign"></span>
+    <p class="clearfix ellipsis font14" style="margin-top:6px;"><a class="pull-left" href="luojian1991/index.html">罗无双</a><img src="media/images/grey.gif" onLoad="setGrade(this,0)" /></p>
+    <p class="muted ellipsis font12" style=" width:164px;overflow:hidden;"><img src="media/images/grey.gif" onLoad="outputTextFace(this,'火星用户，暂无记录')" /></p>
+    <p><a class="btn btn-mini font12" href="luojian1991/index.html"><i class="icon-plus"></i>加关注</a></p>
+</li>
+
+</ul>
+</div>
+<div class="border_shadow index_block">
+<div class="index_block_title"><span class="pull-left title">记录</span><span class="pull-right font12"><a class="muted" href="blogs/index.html">更多»</a></span></div>
+<div class="row-fluid blog-tab">
+<div class="span4">
+<a class="blog-type" href="blogs/index.html?op=hot" target="_blank">热 门</a>
+<ul style="list-style:none; margin:0;">
+  <li class="ellipsis font13"><a href="blog/14/index.html?from=blog" target="_blank">2014年月度、季度积分达人评选活动规则</a></li>
+
+  <li class="ellipsis font13"><a href="blog/21/index.html?from=blog" target="_blank">第五届报喜鸟新锐艺术人物评选颁奖晚会视频（全）</a></li>
+
+  <li class="ellipsis font13"><a href="blog/17/index.html?from=blog" target="_blank">爆笑段子，保证你乐得合不上嘴</a></li>
+
+  <li class="ellipsis font13"><a href="blog/19/index.html?from=blog" target="_blank">喜迎新春 阅享未来——报喜鸟2014元旦跨年晚会欢乐落幕</a></li>
+
+  <li class="ellipsis font13"><a href="blog/13/index.html?from=blog" target="_blank">2013报喜鸟年度喜阅先生——张鑫林</a></li>
+
+  <li class="ellipsis font13"><a href="blog/18/index.html?from=blog" target="_blank">轻松一刻（第二季）</a></li>
+
+  <li class="ellipsis font13"><a href="blog/16/index.html?from=blog" target="_blank">一生要去的国内56个地方。我在准备着！ 你呢？</a></li>
+
+  <li class="ellipsis font13"><a href="blog/3/index.html?from=blog" target="_blank">教男士朋友们穿出英伦范</a></li>
+</ul>
+</div>
+<div class="span4">
+<a class="blog-type" href="blogs/index.html" target="_blank">最 新</a>
+<ul style="list-style:none; margin:0;">
+  <li class="ellipsis font13"><a href="blog/99/index.html?from=blog" target="_blank">语录&amp;格言</a></li>
+
+  <li class="ellipsis font13"><a href="blog/98/index.html?from=blog" target="_blank">格言&amp;语录</a></li>
+
+  <li class="ellipsis font13"><a href="blog/97/index.html?from=blog" target="_blank">格言&amp;语录</a></li>
+
+  <li class="ellipsis font13"><a href="blog/96/index.html?from=blog" target="_blank">格言&amp;语录</a></li>
+
+  <li class="ellipsis font13"><a href="blog/95/index.html?from=blog" target="_blank">格言&amp;语录</a></li>
+
+  <li class="ellipsis font13"><a href="blog/94/index.html?from=blog" target="_blank">格言语录</a></li>
+
+  <li class="ellipsis font13"><a href="blog/93/index.html?from=blog" target="_blank">语录格言</a></li>
+
+  <li class="ellipsis font13"><a href="blog/92/index.html?from=blog" target="_blank">于丹心语</a></li>
+</ul>
+</div>
+<div class="span4">
+<a class="blog-type" href="blogs/index.html?op=activity" target="_blank">活 动</a>
+<ul style="list-style:none; margin:0;">
+  <li class="ellipsis font13"><a href="blog/80/index.html?from=blog" target="_blank">2014年11月喜社区积分排名表</a></li>
+
+  <li class="ellipsis font13"><a href="blog/76/index.html?from=blog" target="_blank">2014年第三季度喜社区积分排名表</a></li>
+
+  <li class="ellipsis font13"><a href="blog/74/index.html?from=blog" target="_blank">2014年9月喜社区积分排名表</a></li>
+
+  <li class="ellipsis font13"><a href="blog/73/index.html?from=blog" target="_blank">2014年8月喜社区积分排名表：</a></li>
+
+  <li class="ellipsis font13"><a href="blog/72/index.html?from=blog" target="_blank">喜社区2014年7月话题社#给你的健康打分，你会给多少？#抽奖结果</a></li>
+
+  <li class="ellipsis font13"><a href="blog/71/index.html?from=blog" target="_blank">2014年7月喜社区积分排名前10</a></li>
+
+  <li class="ellipsis font13"><a href="blog/70/index.html?from=blog" target="_blank">2014年第二季度喜社区积分排名前10</a></li>
+
+  <li class="ellipsis font13"><a href="blog/69/index.html?from=blog" target="_blank">喜社区2014年6月话题讨论#世界杯与女朋友，不得不说的那点事#参与用户中奖公告</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="border_shadow index_block">
+<div class="index_block_title"><span class="pull-left title">生活</span><span class="pull-right font12"><a class="muted" href="photos/index.html?listid=7">更多»</a></span></div>
+<ul class="album_rec_list clearfix">
+
+
+<li class="clearfix" style="">
+<a class="pull-left" href="album/index.html?id=10" title="工作与生活" target="_blank" >
+<img src="media/upload/images/thumb/13_5_27_760.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=10" target="_blank">工作与生活</a></p>
+<p class="font12 muted">忙碌+快乐</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="liugl/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'liugl.jpg',1,30)" /></a> <a href="liugl/index.html">停止的闹钟☎</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=10" target="_blank">449</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="margin-right:0;">
+<a class="pull-left" href="album/index.html?id=15" title="拓展" target="_blank" >
+<img src="media/upload/images/thumb/8_33_40_670.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=15" target="_blank">拓展</a></p>
+<p class="font12 muted"></p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="zhzh.3344/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'zhzh.3344.jpg',2,30)" /></a> <a href="zhzh.3344/index.html">橙子</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=15" target="_blank">349</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="">
+<a class="pull-left" href="album/index.html?id=1" title="我与报喜鸟" target="_blank" >
+<img src="media/upload/images/thumb/11_25_31_886.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=1" target="_blank">我与报喜鸟</a></p>
+<p class="font12 muted">与报喜鸟家人生活。</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="king/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'king.jpg',1,30)" /></a> <a href="king/index.html">子焰</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=1" target="_blank">294</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="margin-right:0;">
+<a class="pull-left" href="album/index.html?id=25" title="喜悦先生" target="_blank" >
+<img src="media/upload/images/thumb/11_21_1_916.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=25" target="_blank">喜悦先生</a></p>
+<p class="font12 muted"></p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="rocket2013/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'rocket2013.jpg',1,30)" /></a> <a href="rocket2013/index.html">HERO</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=25" target="_blank">240</a></span></p>
+</div>
+</li>
+
+
+</ul>
+</div>
+
+
+
+<div class="border_shadow index_block">
+<div class="index_block_title"><span class="pull-left title">旅行</span><span class="pull-right font12"><a class="muted" href="photos/index.html?listid=1">更多»</a></span></div>
+<ul class="album_rec_list clearfix">
+
+
+<li class="clearfix" style="">
+<a class="pull-left" href="album/index.html?id=45" title="曾今过去的那段时光。" target="_blank" >
+<img src="media/upload/images/thumb/19_6_28_888.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=45" target="_blank">曾今过去的那段时光。</a></p>
+<p class="font12 muted">情由多深，只有情自知罢了。</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="taibai520/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'taibai520.jpg',2,30)" /></a> <a href="taibai520/index.html">如果你忘记我</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=45" target="_blank">160</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="margin-right:0;">
+<a class="pull-left" href="album/index.html?id=62" title="精美图片" target="_blank" >
+<img src="media/upload/images/thumb/15_39_32_876.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=62" target="_blank">精美图片</a></p>
+<p class="font12 muted"></p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="15355985608/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'15355985608.jpg',1,30)" /></a> <a href="15355985608/index.html"> 如意通</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=62" target="_blank">153</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="">
+<a class="pull-left" href="album/index.html?id=24" title="2014元旦晚会" target="_blank" >
+<img src="media/upload/images/thumb/17_3_1_447.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=24" target="_blank">2014元旦晚会</a></p>
+<p class="font12 muted"></p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="472016262/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'472016262.jpg',1,30)" /></a> <a href="472016262/index.html">夏日清凉</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=24" target="_blank">101</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="margin-right:0;">
+<a class="pull-left" href="album/index.html?id=85" title="象山游" target="_blank" >
+<img src="media/upload/images/thumb/13_18_15_316.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=85" target="_blank">象山游</a></p>
+<p class="font12 muted">美好又纠结的一天</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="WEIFNEG/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'WEIFNEG.jpg',1,30)" /></a> <a href="WEIFNEG/index.html">吹过山岗的风</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=85" target="_blank">92</a></span></p>
+</div>
+</li>
+
+
+</ul>
+</div>
+
+
+
+<div class="border_shadow index_block">
+<div class="index_block_title"><span class="pull-left title">明星</span><span class="pull-right font12"><a class="muted" href="photos/index.html?listid=2">更多»</a></span></div>
+<ul class="album_rec_list clearfix">
+
+
+<li class="clearfix" style="">
+<a class="pull-left" href="album/index.html?id=33" title="凤凰尚品霞浦体验店9月16日隆重登陆" target="_blank" >
+<img src="media/upload/images/thumb/17_13_11_687.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=33" target="_blank">凤凰尚品霞浦体验店9月16日隆重登陆</a></p>
+<p class="font12 muted">喜阅巡店，尚品之旅，9月16日至18日正逢报喜鸟形象代言人古天乐2013尚品巡店之...</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="bxncom/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'bxncom.jpg',1,30)" /></a> <a href="bxncom/index.html">报喜鸟</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=33" target="_blank">190</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="margin-right:0;">
+<a class="pull-left" href="album/index.html?id=51" title="第五届报喜鸟新锐艺术人物颁奖盛典" target="_blank" >
+<img src="media/upload/images/thumb/14_35_27_156.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=51" target="_blank">第五届报喜鸟新锐艺术人物颁奖盛典</a></p>
+<p class="font12 muted">11月16日，第五届报喜鸟新锐艺术人物颁奖盛典在温州楠溪江中心旅游景区盛大举...</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="bxncom/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'bxncom.jpg',1,30)" /></a> <a href="bxncom/index.html">报喜鸟</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=51" target="_blank">187</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="">
+<a class="pull-left" href="album/index.html?id=2" title="第一届，新锐艺术活动" target="_blank" >
+<img src="media/upload/images/thumb/9_19_32_884.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=2" target="_blank">第一届，新锐艺术活动</a></p>
+<p class="font12 muted">2009年，报喜鸟携手国内知名媒体重金打造新锐艺术人物评选活动，旨在鼓励在各...</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="bxncom/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'bxncom.jpg',1,30)" /></a> <a href="bxncom/index.html">报喜鸟</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=2" target="_blank">186</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="margin-right:0;">
+<a class="pull-left" href="album/index.html?id=4" title="报喜鸟第三届新锐艺术盛典" target="_blank" >
+<img src="media/upload/images/thumb/9_45_3_696.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=4" target="_blank">报喜鸟第三届新锐艺术盛典</a></p>
+<p class="font12 muted">报喜鸟第三届新锐艺术盛典，让艺术点缀时尚，感悟艺术精神，让品质描绘生活，...</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="bxncom/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'bxncom.jpg',1,30)" /></a> <a href="bxncom/index.html">报喜鸟</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=4" target="_blank">153</a></span></p>
+</div>
+</li>
+
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<div class="border_shadow index_block">
+<div class="index_block_title"><span class="pull-left title">摄影</span><span class="pull-right font12"><a class="muted" href="photos/index.html?listid=5">更多»</a></span></div>
+<ul class="album_rec_list clearfix">
+
+
+<li class="clearfix" style="">
+<a class="pull-left" href="album/index.html?id=54" title="2014报喜鸟元旦晚会精彩影集" target="_blank" >
+<img src="media/upload/images/thumb/15_15_36_762.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=54" target="_blank">2014报喜鸟元旦晚会精彩影集</a></p>
+<p class="font12 muted">013年12月31日晚， 报喜鸟2014狂欢跨年晚会在工业园餐饮中心隆重上演，喜迎新...</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="fla126/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'fla126.jpg',1,30)" /></a> <a href="fla126/index.html">佐岸咖啡</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=54" target="_blank">360</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="margin-right:0;">
+<a class="pull-left" href="album/index.html?id=60" title="独具风格" target="_blank" >
+<img src="media/upload/images/thumb/14_8_5_228.gif" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=60" target="_blank">独具风格</a></p>
+<p class="font12 muted"></p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="15355985608/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'15355985608.jpg',1,30)" /></a> <a href="15355985608/index.html"> 如意通</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=60" target="_blank">241</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="">
+<a class="pull-left" href="album/index.html?id=61" title="男装" target="_blank" >
+<img src="media/upload/images/thumb/13_7_44_204.bmp" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=61" target="_blank">男装</a></p>
+<p class="font12 muted"></p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="15355985608/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'15355985608.jpg',1,30)" /></a> <a href="15355985608/index.html"> 如意通</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=61" target="_blank">150</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="margin-right:0;">
+<a class="pull-left" href="album/index.html?id=34" title="中秋各地赏月 最大最圆月亮登场" target="_blank" >
+<img src="media/upload/images/thumb/9_44_16_829.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=34" target="_blank">中秋各地赏月 最大最圆月亮登场</a></p>
+<p class="font12 muted">2013年中秋各地赏月 最大最圆月亮登场</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="fla126/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'fla126.jpg',1,30)" /></a> <a href="fla126/index.html">佐岸咖啡</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=34" target="_blank">56</a></span></p>
+</div>
+</li>
+
+
+</ul>
+</div>
+
+
+
+<div class="border_shadow index_block">
+<div class="index_block_title"><span class="pull-left title">美女</span><span class="pull-right font12"><a class="muted" href="photos/index.html?listid=6">更多»</a></span></div>
+<ul class="album_rec_list clearfix">
+
+
+<li class="clearfix" style="">
+<a class="pull-left" href="album/index.html?id=38" title="美女" target="_blank" >
+<img src="media/upload/images/thumb/16_23_25_704.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=38" target="_blank">美女</a></p>
+<p class="font12 muted"></p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="15355985608/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'15355985608.jpg',1,30)" /></a> <a href="15355985608/index.html"> 如意通</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=38" target="_blank">192</a></span></p>
+</div>
+</li>
+
+
+</ul>
+</div>
+
+
+
+<div class="border_shadow index_block">
+<div class="index_block_title"><span class="pull-left title">婚礼</span><span class="pull-right font12"><a class="muted" href="photos/index.html?listid=8">更多»</a></span></div>
+<ul class="album_rec_list clearfix">
+
+
+<li class="clearfix" style="">
+<a class="pull-left" href="album/index.html?id=7" title="报喜鸟2013上半年三亚集体婚礼" target="_blank" >
+<img src="media/upload/images/thumb/14_59_33_880.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=7" target="_blank">报喜鸟2013上半年三亚集体婚礼</a></p>
+<p class="font12 muted">2013年5月20日至21日，为期两天的“喜阅挚爱 见证永恒”报喜鸟三亚浪漫集体婚...</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="bxncom/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'bxncom.jpg',1,30)" /></a> <a href="bxncom/index.html">报喜鸟</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=7" target="_blank">240</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="margin-right:0;">
+<a class="pull-left" href="album/index.html?id=6" title="报喜鸟2012三亚集体婚礼" target="_blank" >
+<img src="media/upload/images/thumb/14_1_10_949.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=6" target="_blank">报喜鸟2012三亚集体婚礼</a></p>
+<p class="font12 muted">“爱，炽热浪漫，相拥呵护，难忘一生，挚爱，相依相随，执子之手，天荒地老。...</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="bxncom/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'bxncom.jpg',1,30)" /></a> <a href="bxncom/index.html">报喜鸟</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=6" target="_blank">236</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="">
+<a class="pull-left" href="album/index.html?id=55" title="2013下半年报喜鸟三亚集体婚礼活动影集" target="_blank" >
+<img src="media/upload/images/thumb/16_27_39_762.jpg" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=55" target="_blank">2013下半年报喜鸟三亚集体婚礼活动影集</a></p>
+<p class="font12 muted">2013年12月28日至29日，为期两天的“喜阅挚爱 见证永恒”报喜鸟下半年三亚浪漫...</p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="fla126/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'fla126.jpg',1,30)" /></a> <a href="fla126/index.html">佐岸咖啡</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=55" target="_blank">194</a></span></p>
+</div>
+</li>
+
+
+
+<li class="clearfix" style="margin-right:0;">
+<a class="pull-left" href="album/index.html?id=100" title="婚礼" target="_blank" >
+<img src="media/upload/images/thumb/15_53_13_939.gif" style="width:160px;"></a>
+<div class="album_rec_text pull-right">
+<p class="ellipsis"><a href="album/index.html?id=100" target="_blank">婚礼</a></p>
+<p class="font12 muted"></p>
+<p class="album_rec_info font12 clearfix"><span class="pull-left ellipsis" style="width:100px;"><a href="4228808ML/index.html" title="发布者"><img src="media/images/grey.gif" onLoad="getGravatar(this,'',1,30)" /></a> <a href="4228808ML/index.html">胖丫</a></span><span class="pull-right icon-eye"><a class="muted" href="album/index.html?id=100" target="_blank">22</a></span></p>
+</div>
+</li>
+
+
+</ul>
+</div>
+
+
+</div>
+<div class="index_main_right">
+<div class="index_right_block border_shadow">
+
+<ul class="nav nav-tabs">
+<li class="active"><a class="normal-login" href="javascript:void(0);">普通登录</a></li>
+<li><a class="mobile-login" href="javascript:void(0);">手机登录</a></li>
+</ul>
+<div class="index_login_form font12">
+<form class="form-horizontal" style="margin-bottom:0;" id="index_login_form" action="login/index.html" method="post"><div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='jNGmWnn8Ehdr9TAVLlnWnvd1dQE0yLaE' /></div>
+
+
+    <div class="control-group ">
+    <label class="control-label font12" for="id_username">账号：</label>
+    <div class="controls input">
+    <input id="id_username" type="text" name="username" maxlength="30" />
+    </div>
+    </div>
+
+    <div class="control-group ">
+    <label class="control-label font12" for="id_password">密码：</label>
+    <div class="controls input">
+    <input type="password" name="password" id="id_password" />
+    </div>
+    </div>
+
+    <div class="control-group hide">
+    <label class="control-label font12" for="id_ismobile">手机登录:</label>
+    <div class="controls input">
+    <input type="checkbox" name="ismobile" id="id_ismobile" />
+    </div>
+    </div>
+
+    <div class="control-group">
+    <div class="controls">
+    <label class="checkbox font12">
+    <input id="memPass" name="memPass" checked="checked" type="checkbox"> 记住登录状态
+    </label>
+    <button class="btn btn-warning" id="submit" name="submit" type="submit"> 登 录 </button>&nbsp;&nbsp;&nbsp;&nbsp;<a  href="getpass/index.html" class="find_password"><span>忘记密码?</span></a>
+    </div>
+    </div>
+    <hr />
+    <p class="text-center" style="margin-top:5px;"><span class="muted">还没有喜社区账号？</span> <a  href="reg/index.html" class="register_user"><span>立即注册</span></a></p>
+    <hr />
+    <div class="control-group fast_login">
+    <label class="control-label font12">快捷：</label>
+    <div class="controls">
+    <a href="https://api.weibo.com/oauth2/authorize?client_id=3947945761&redirect_uri=http://hi.bxn.com/sinalogin/&response_type=code&state=authorize" title="新浪微博登录" target="_top" rel="nofollow"><img src="media/images/sina_btn.png" width="62" height="24" alt="新浪微博登录" /></a>&nbsp;&nbsp;<a href="https://open.t.qq.com/cgi-bin/oauth2/authorize?client_id=801407614&response_type=code&redirect_uri=http://hi.bxn.com/qqlogin/&state=authorize&forcelogin=false" title="QQ账号登录" target="_top" rel="nofollow"><img src="media/images/qq_btn.png" width="62" height="24" alt="QQ账号登录" /></a>
+    </div>
+    </div>
+</form>
+</div>
+
+</div>
+<div class="index_right_block border_shadow">
+
+<div class="tabbable font12 activity"> <!-- Only required for left/right tabs -->
+<ul class="nav nav-tabs" style="margin-bottom:5px;">
+<li class="active"><a href="index.html#subject" data-toggle="tab">话题社</a></li>
+<li ><a href="index.html#poll" data-toggle="tab">投票</a></li>
+<li ><a href="index.html#appraise" data-toggle="tab">评选</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="subject">
+<div style="padding:0 5px;">
+<a href="discuss/index.html?id=8" target="_blank"><img src="media/upload/editor/2014_6_30/9_48_53.jpg" alt=""></a>
+<p style="margin-top:5px;"><strong><a href="discuss/index.html?id=8" target="_blank">给你的健康打分，你会给多少？</a></strong></p>
+<p class="muted">水是生命之源，那么健康就是幸福之源，没有了健康，拥有了再多也等于空白。现下城市白领是健康隐患最大的群体之一。假设健康...</p>
+<p class="text-center"><a class="btn btn-info" href="discuss/index.html?id=8" target="_blank">参与话题大讨论</a></p>
+</div>
+</div>
+<div class="tab-pane " id="poll">
+<div  style="padding:0 5px;">
+<a href="poll/index.html?id=1" target="_blank"><img src="media/upload/editor/2013_12_24/10_3_11.jpg" alt=""></a>
+<p style="margin-top:5px;"><strong><a href="poll/index.html?id=1" target="_blank">最喜欢的2013年度“喜阅先生”</a></strong></p>
+<p class="muted">
+2013年度我最喜爱的&ldquo;喜阅先生&rdquo;投票活动开始了。八位报喜鸟喜阅先生是于2013年8月15日至12月15日期间由报喜鸟专...</p>
+<p class="text-info">截止日期: 三月-31 2014</p>
+<p class="text-center"><a class="btn btn-success" href="poll/index.html?id=1" target="_blank">参与投票，拿喜币</a></p>
+</div>
+</div>
+<div class="tab-pane " id="appraise">
+<div  style="padding:0 5px;">
+<a href="appraise/index.html?id=1" target="_blank"><img src="media/upload/editor/2014_9_18/15_20_40.jpg" alt=""></a>
+<p style="margin-top:5px;"><strong><a href="appraise/index.html?id=1" target="_blank">发现您身边的喜悦摄影作品评选</a></strong></p>
+<p class="text-info">截止日期: 六月-30 2014</p>
+<p class="text-center font14">已经有<span class="text-error"><strong>30</strong></span>人参与此活动！</p>
+<p class="text-center"><a class="btn btn-danger" href="appraise/index.html?id=1" target="_blank">参与活动，拿大奖</a></p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="index_right_block border_shadow">
+<div class="index-right-title clearfix line-bottom">积分达人前10排行榜</div>
+<div class="tabbable font12 chart"> <!-- Only required for left/right tabs -->
+<ul class="nav nav-tabs" style="margin-bottom:5px;">
+<li class="active"><a href="index.html#thisMonth" data-toggle="tab">本月</a></li>
+<li><a href="index.html#thisQuarter" data-toggle="tab">本季</a></li>
+<li><a href="index.html#thisYear" data-toggle="tab">本年</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="thisMonth">
+<ul class="chart">
+
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge badge-warning">1</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="XINGQL/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'',1,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="XINGQL/index.html">苏J***YC</a></span><span class="muted pull-right">6</span></li>
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge badge-important">2</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="DuF20140306/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'DuF20140306.jpg',1,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="DuF20140306/index.html">メ炎の殇゛ら</a></span><span class="muted pull-right">3</span></li>
+
+</ul>
+</div>
+<div class="tab-pane" id="thisQuarter">
+<ul class="chart">
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge badge-warning">1</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="XINGQL/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'',1,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="XINGQL/index.html">苏J***YC</a></span><span class="muted pull-right">6</span></li>
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge badge-important">2</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="DuF20140306/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'DuF20140306.jpg',1,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="DuF20140306/index.html">メ炎の殇゛ら</a></span><span class="muted pull-right">3</span></li>
+
+</ul>
+</div>
+<div class="tab-pane" id="thisYear">
+<ul class="chart">
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge badge-warning">1</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="yinmeier000/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'yinmeier000.jpg',2,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="yinmeier000/index.html">养颜快线  </a></span><span class="muted pull-right">2787</span></li>
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge badge-important">2</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="xyc1961/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'xyc1961.jpg',1,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="xyc1961/index.html">长风</a></span><span class="muted pull-right">2213</span></li>
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge badge-info">3</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="liym1670040688/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'liym1670040688.jpg',2,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="liym1670040688/index.html">蓝之恋@</a></span><span class="muted pull-right">2119</span></li>
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge">4</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="nihaoma/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'nihaoma.png',2,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="nihaoma/index.html">你好吗</a></span><span class="muted pull-right">1215</span></li>
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="fanghh/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'fanghh.jpg',1,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="fanghh/index.html">指尖~如烟</a></span><span class="muted pull-right">917</span></li>
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge">6</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="chenhaijun/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'chenhaijun.jpg',1,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="chenhaijun/index.html">快乐驿站</a></span><span class="muted pull-right">495</span></li>
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge">7</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="1052371547/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'1052371547.png',1,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="1052371547/index.html">期待</a></span><span class="muted pull-right">251</span></li>
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge">8</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="zhaoshuai/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'zhaoshuai.jpg',1,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="zhaoshuai/index.html">普京</a></span><span class="muted pull-right">197</span></li>
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge">9</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="lvlp/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'lvlp.jpg',1,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="lvlp/index.html">农民工</a></span><span class="muted pull-right">165</span></li>
+
+<li class="clearfix"><span class="pull-left chart-info ellipsis"><span class="badge">10</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="4117677422/index.html"><img src="media/images/grey.gif" onLoad="getGravatar(this,'4117677422.jpg',2,30)" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="normal" href="4117677422/index.html">雅依</a></span><span class="muted pull-right">132</span></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="index_right_block border_shadow">
+<div class="index-right-title clearfix line-bottom">热门话题</div>
+<ul class="tags-list">
+
+</ul>
+</div>
+<div class="index_right_block border_shadow">
+<div class="index-right-title clearfix line-bottom">热门标签</div>
+<div class="tags clearfix"><a href="tag/活�%258A�/index.html" class=" red" target="_blank">活动</a><a href="tag/积�%2588%2586�%258E%2592�%2590%258D/index.html" class="bold " target="_blank">积分排名</a><a href="tag/�%259D�%2598社/index.html" class="bold red" target="_blank">话题社</a><a href="tag/�%2596%259C�%2582��%2585%2588�%2594%259F/index.html" class=" " target="_blank">喜悦先生</a><a href="tag/中�%2596�%2585��%2591%258A/index.html" class=" blue" target="_blank">中奖公告</a><a href="tag/�%2591�%259D/index.html" class=" " target="_blank">笑话</a><a href="tag/�%258A��%2596/index.html" class=" red" target="_blank">抽奖</a><a href="tag/轻�%259D��%2580�%2588�/index.html" class=" " target="_blank">轻松一刻</a><a href="tag/季度�%2596/index.html" class=" " target="_blank">季度奖</a><a href="tag/�%258F�%2595%2599�%258B/index.html" class="bold red" target="_blank">小教程</a><a href="tag/�%259B%2586栽/index.html" class=" " target="_blank">盆栽</a><a href="tag/�%2596�%2593%2581/index.html" class=" blue" target="_blank">奖品</a><a href="tag/�%2596%259C社�%258C�客�%2588�端/index.html" class=" blue" target="_blank">喜社区客户端</a><a href="tag/�%259A�%2586�%259A�%259C%258D/index.html" class="bold " target="_blank">婚庆婚服</a><a href="tag/�%2596��%2594%2590�%2595%2585�%258B/index.html" class="bold " target="_blank">新锐故事</a><a href="tag/�%2585%2583�%2597��%2599%259A�%259A/index.html" class="bold " target="_blank">元旦晚会</a><a href="tag/�%259C%258D�%2585�%2590��%2585%258D/index.html" class=" blue" target="_blank">服装搭配</a><a href="tag/修身�%258B�%2581%2593/index.html" class=" " target="_blank">修身之道</a><a href="tag/�%2597%2585�%258C/index.html" class="bold blue" target="_blank">旅行</a><a href="tag/正�%2585大�%2588/index.html" class=" " target="_blank">正装大师</a><a href="tag/�%258A��%2596%259C�%259F核�%2583产�%2593%2581/index.html" class=" blue" target="_blank">报喜鸟核心产品</a><a href="tag/�%2594�士/index.html" class="bold red" target="_blank">男士</a><a href="tag/穿�%259D%2580/index.html" class=" red" target="_blank">穿着</a><a href="tag/�%2590��%2585%258D/index.html" class="bold blue" target="_blank">搭配</a><a href="tag/积�%2588%2586达人/index.html" class="bold red" target="_blank">积分达人</a><a href="tag/�%258A�语/index.html" class=" red" target="_blank">花语</a><a href="tag/�%2597%2585游�%2583%259C�%259C�/index.html" class="bold red" target="_blank">旅游胜地</a><a href="tag/�%2597%2585游/index.html" class="bold " target="_blank">旅游</a><a href="tag/�%2587�游/index.html" class=" " target="_blank">出游</a><a href="tag/�%258E�%2599�/index.html" class=" " target="_blank">风景</a></div>
+</div>
+</div>
+</div>
+
+<div class="footer" style="margin-top:20px; padding-bottom:20px;">
+<p class="copyright_link">Copyright © 2013 BXN.COM all rights reserved. | <a href="http://www.miibeian.gov.cn/" target="_blank">浙ICP备05001320号</a> | <a href="http://weibo.com/bxncom" target="_blank">报喜鸟微博</a> | <a href="http://www.bxn.com/app/" target="_blank">移动应用</a></p>
+</div> 
+
+<!--消息显示面板--> 
+<span class="alert text-center tippanel"></span> 
+<!--赞列表显示面板-->
+<div class="popover bottom up_list">
+  <div class="arrow"></div>
+  <div class="popover-content clearfix">
+    <div class="row-fluid"></div>
+  </div>
+</div>
+
+<!--插入表情框-->
+<div class="popover bottom emotpanel">
+  <div class="arrow" style="left:3%;"></div>
+  <h3 class="popover-title clearfix"><span class="pull-left">插入表情</span>
+    <button type="button" onclick="closePanel()" class="close">&times;</button>
+  </h3>
+  <div class="popover-content">
+    <div class="W_loading"><span>正在加载中，请稍候...</span></div>
+  </div>
+</div>
+<!--模板对话框-->
+<div id="TemplatePanel" class="modal hide font12" tabindex="-1">
+  <div class="modal-header">
+    <button type="button" class="close" onClick="$('#TemplatePanel').hide()">×</button>
+    <h6 >个性化模板设置</h6>
+  </div>
+  <div class="modal-body">
+    <ul class="nav nav-tabs">
+    <li class="active"><a href="index.html#templates" data-toggle="tab">模板套装</a></li>
+    <li><a href="index.html#covers" data-toggle="tab">个人主页封面</a></li>
+    </ul>
+    <div class="tab-content">
+    <div class="tab-pane active" id="templates">
+    <ul class="template-list clearfix">
+    <li data-template="bamboo"><a onClick="setTemplate('bamboo',this)"  data-original-title="﻿青竹" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/bamboo/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="brother"><a onClick="setTemplate('brother',this)"  data-original-title="﻿好基友" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/brother/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="cat"><a onClick="setTemplate('cat',this)"  data-original-title="﻿情侣喵星人" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/cat/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="default"><a onClick="setTemplate('default',this)"  data-original-title="﻿风轻云淡" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/default/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="fake"><a onClick="setTemplate('fake',this)"  data-original-title="﻿粉色风信子" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/fake/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="findwork"><a onClick="setTemplate('findwork',this)"  data-original-title="﻿求工作" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/findwork/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="graduating"><a onClick="setTemplate('graduating',this)"  data-original-title="﻿毕业季" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/graduating/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="hasvacation"><a onClick="setTemplate('hasvacation',this)"  data-original-title="﻿Take Me Home" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/hasvacation/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="heart"><a onClick="setTemplate('heart',this)"  data-original-title="﻿心之恋" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/heart/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="lily"><a onClick="setTemplate('lily',this)"  data-original-title="﻿荷花" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/lily/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="love"><a onClick="setTemplate('love',this)"  data-original-title="﻿心心相印记" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/love/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="onesjourney"><a onClick="setTemplate('onesjourney',this)"  data-original-title="﻿一个人的旅行" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/onesjourney/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="penguin"><a onClick="setTemplate('penguin',this)"  data-original-title="﻿南极企鹅" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/penguin/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="polaroid"><a onClick="setTemplate('polaroid',this)"  data-original-title="﻿情迷宝丽来" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/polaroid/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="princess"><a onClick="setTemplate('princess',this)"  data-original-title="﻿迪斯尼-公主" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/princess/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="settingsun"><a onClick="setTemplate('settingsun',this)"  data-original-title="﻿夕影" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/settingsun/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="springride"><a onClick="setTemplate('springride',this)"  data-original-title="﻿旅行赏春" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/springride/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="stitch"><a onClick="setTemplate('stitch',this)"  data-original-title="﻿迪斯尼-史迪奇" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/stitch/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="travel"><a onClick="setTemplate('travel',this)"  data-original-title="﻿环游世界" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/travel/skin.jpg" width="123" height="73"></a></li>
+    <li data-template="winnie"><a onClick="setTemplate('winnie',this)"  data-original-title="﻿迪斯尼-维尼熊" rel="tooltip"  href="javascript:void(0);"><img src="static/skins/winnie/skin.jpg" width="123" height="73"></a></li>
+    
+    </ul>
+    </div>
+    <div class="tab-pane" id="covers">
+    <ul class="cover-list clearfix">
+    <li data-cover="001.jpg"><a onClick="setCover('001.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/001.jpg" width="255" height="78"></a></li>
+    <li data-cover="002.jpg"><a onClick="setCover('002.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/002.jpg" width="255" height="78"></a></li>
+    <li data-cover="003.jpg"><a onClick="setCover('003.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/003.jpg" width="255" height="78"></a></li>
+    <li data-cover="004.jpg"><a onClick="setCover('004.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/004.jpg" width="255" height="78"></a></li>
+    <li data-cover="005.jpg"><a onClick="setCover('005.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/005.jpg" width="255" height="78"></a></li>
+    <li data-cover="006.jpg"><a onClick="setCover('006.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/006.jpg" width="255" height="78"></a></li>
+    <li data-cover="007.jpg"><a onClick="setCover('007.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/007.jpg" width="255" height="78"></a></li>
+    <li data-cover="008.jpg"><a onClick="setCover('008.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/008.jpg" width="255" height="78"></a></li>
+    <li data-cover="009.jpg"><a onClick="setCover('009.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/009.jpg" width="255" height="78"></a></li>
+    <li data-cover="010.jpg"><a onClick="setCover('010.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/010.jpg" width="255" height="78"></a></li>
+    <li data-cover="011.jpg"><a onClick="setCover('011.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/011.jpg" width="255" height="78"></a></li>
+    <li data-cover="012.jpg"><a onClick="setCover('012.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/012.jpg" width="255" height="78"></a></li>
+    <li data-cover="013.jpg"><a onClick="setCover('013.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/013.jpg" width="255" height="78"></a></li>
+    <li data-cover="014.jpg"><a onClick="setCover('014.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/014.jpg" width="255" height="78"></a></li>
+    <li data-cover="015.jpg"><a onClick="setCover('015.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/015.jpg" width="255" height="78"></a></li>
+    <li data-cover="016.jpg"><a onClick="setCover('016.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/016.jpg" width="255" height="78"></a></li>
+    <li data-cover="017.jpg"><a onClick="setCover('017.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/017.jpg" width="255" height="78"></a></li>
+    <li data-cover="018.jpg"><a onClick="setCover('018.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/018.jpg" width="255" height="78"></a></li>
+    <li data-cover="019.jpg"><a onClick="setCover('019.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/019.jpg" width="255" height="78"></a></li>
+    <li data-cover="020.jpg"><a onClick="setCover('020.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/020.jpg" width="255" height="78"></a></li>
+    <li data-cover="021.jpg"><a onClick="setCover('021.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/021.jpg" width="255" height="78"></a></li>
+    <li data-cover="022.jpg"><a onClick="setCover('022.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/022.jpg" width="255" height="78"></a></li>
+    <li data-cover="023.jpg"><a onClick="setCover('023.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/023.jpg" width="255" height="78"></a></li>
+    <li data-cover="024.jpg"><a onClick="setCover('024.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/024.jpg" width="255" height="78"></a></li>
+    <li data-cover="025.jpg"><a onClick="setCover('025.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/025.jpg" width="255" height="78"></a></li>
+    <li data-cover="026.jpg"><a onClick="setCover('026.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/026.jpg" width="255" height="78"></a></li>
+    <li data-cover="027.jpg"><a onClick="setCover('027.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/027.jpg" width="255" height="78"></a></li>
+    <li data-cover="028.jpg"><a onClick="setCover('028.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/028.jpg" width="255" height="78"></a></li>
+    <li data-cover="029.jpg"><a onClick="setCover('029.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/029.jpg" width="255" height="78"></a></li>
+    <li data-cover="030.jpg"><a onClick="setCover('030.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/030.jpg" width="255" height="78"></a></li>
+    <li data-cover="031.jpg"><a onClick="setCover('031.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/031.jpg" width="255" height="78"></a></li>
+    <li data-cover="032.jpg"><a onClick="setCover('032.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/032.jpg" width="255" height="78"></a></li>
+    <li data-cover="033.jpg"><a onClick="setCover('033.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/033.jpg" width="255" height="78"></a></li>
+    <li data-cover="034.jpg"><a onClick="setCover('034.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/034.jpg" width="255" height="78"></a></li>
+    <li data-cover="035.jpg"><a onClick="setCover('035.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/035.jpg" width="255" height="78"></a></li>
+    <li data-cover="036.jpg"><a onClick="setCover('036.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/036.jpg" width="255" height="78"></a></li>
+    <li data-cover="037.jpg"><a onClick="setCover('037.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/037.jpg" width="255" height="78"></a></li>
+    <li data-cover="038.jpg"><a onClick="setCover('038.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/038.jpg" width="255" height="78"></a></li>
+    <li data-cover="039.jpg"><a onClick="setCover('039.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/039.jpg" width="255" height="78"></a></li>
+    <li data-cover="040.jpg"><a onClick="setCover('040.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/040.jpg" width="255" height="78"></a></li>
+    <li data-cover="041.jpg"><a onClick="setCover('041.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/041.jpg" width="255" height="78"></a></li>
+    <li data-cover="042.jpg"><a onClick="setCover('042.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/042.jpg" width="255" height="78"></a></li>
+    <li data-cover="043.jpg"><a onClick="setCover('043.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/043.jpg" width="255" height="78"></a></li>
+    <li data-cover="044.jpg"><a onClick="setCover('044.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/044.jpg" width="255" height="78"></a></li>
+    <li data-cover="045.jpg"><a onClick="setCover('045.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/045.jpg" width="255" height="78"></a></li>
+    <li data-cover="cover_1.jpg"><a onClick="setCover('cover_1.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/cover_1.jpg" width="255" height="78"></a></li>
+    <li data-cover="cover_2.jpg"><a onClick="setCover('cover_2.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/cover_2.jpg" width="255" height="78"></a></li>
+    <li data-cover="cover_3.jpg"><a onClick="setCover('cover_3.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/cover_3.jpg" width="255" height="78"></a></li>
+    <li data-cover="cover_4.jpg"><a onClick="setCover('cover_4.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/cover_4.jpg" width="255" height="78"></a></li>
+    <li data-cover="cover_5.jpg"><a onClick="setCover('cover_5.jpg',this)" href="javascript:void(0);"><img src="static/covers/thumb/cover_5.jpg" width="255" height="78"></a></li>
+    
+    </ul>
+    </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="row-fluid">
+      <div class="span3 offset4 pull-right">
+      	<button onclick="saveTemplate()"  class="btn btn-success">保存</button>
+        <button onClick="$('#TemplatePanel').hide()"  class="btn" >取消</button>
+      </div>
+    </div>
+  </div>
+  <form class="hide" action="http://hi.bxn.com/settemplate/" method="post" id="templateForm">
+  <input name="template" type="hidden" id="template" value="">
+  <input name="cover" type="hidden" id="cover" value="">
+  <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='jNGmWnn8Ehdr9TAVLlnWnvd1dQE0yLaE' /></div>
+  </form>
+</div>
+<!--私信对话框-->
+<div id="Letter" class="modal hide fade font12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h6 id="myModalLabel">发私信</h6>
+  </div>
+  <div class="modal-body">
+    <div class="row-fluid">
+    <div class="span12" style="margin-left:0;">
+        <div class="span8"  style="margin-left:0;">发给： <input id="letter-nickname" class="input-medium" type="text"> <em class="muted"> 请输入对方昵称</em></div>
+        <div class="span4 pull-right num"><b>还可以输入</b><span class="gray">300</span>字</div></div>
+    	内容： <textarea rows="4" id="letter-text" style="width:470px;" placeholder="请输入私信内容"></textarea>
+    </div>    
+  </div>
+  <div class="modal-footer">
+    <div class="row-fluid">
+      <div class="span5" style="margin-left:0; text-align:left;"> <a class="W_icon icon_emot" title="插入表情" onclick="zhuanEmotPanel(this,$('#letter-text'))" href="javascript:void(0);"></a></div>
+      <div class="span3 offset4 pull-right">
+        <button onclick="sendLetter(this,'#Letterbox')" id="letter-btn" class="btn btn-small btn-warning" >发送</button>
+      </div>
+    </div>
+  </div>
+  <!--插入表情框-->
+  <div class="popover bottom zhuanemotpanel hide">
+    <div class="arrow" style="left:3%;"></div>
+    <h3 class="popover-title clearfix"><span class="pull-left">插入表情</span>
+      <button type="button" onclick="closeZhuanPanel()" class="close">&times;</button>
+    </h3>
+    <div class="popover-content">
+      <div class="W_loading"><span>正在加载中，请稍候...</span></div>
+    </div>
+  </div>
+</div>
+<!-- 转发对话框 -->
+<div id="zhuanShare" class="modal hide fade font12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h6 id="myModalLabel">转发分享</h6>
+  </div>
+  <div class="modal-body">
+    <div class="quote_share clearfix">
+      <div class="showLine"></div>
+      <a class=" pull-right" onclick="fullZhuan(this)" title="展开" href="javascript:void(0);"><i class="icon-chevron-down"></i></a></div>
+    <div class="num">发言请遵守社区公约，<b>还可以输入</b><span class="gray">140</span>字</div>
+    <textarea rows="4" id="zhuan-text" style=" width:515px;"  title="转发分享内容" placeholder="请输入转发理由"></textarea>
+  </div>
+  <div class="modal-footer">
+    <div class="row-fluid">
+      <div class="span1" style="margin-left:0;"> <a class="W_icon icon_emot" title="插入表情" onclick="zhuanEmotPanel(this,$('#zhuan-text'))" href="javascript:void(0);"></a></div>
+      <div class="span4 text-left">
+        <label class="font12 checkbox">
+          <input type="checkbox">
+          <span></span></label>
+      </div>
+      <div class="span3 offset4 pull-right">
+        <button id="zhuan-btn" class="btn btn-small btn-warning">转发</button>
+      </div>
+    </div>
+  </div>
+  <!--插入表情框-->
+  <div class="popover bottom zhuanemotpanel hide">
+    <div class="arrow" style="left:3%;"></div>
+    <h3 class="popover-title clearfix"><span class="pull-left">插入表情</span>
+      <button type="button" onclick="closeZhuanPanel()" class="close">&times;</button>
+    </h3>
+    <div class="popover-content">
+      <div class="W_loading"><span>正在加载中，请稍候...</span></div>
+    </div>
+  </div>
+</div>
+<a id="scrollTop" onclick="scrolltoTop()" href="javascript:void(0);" title="回到顶部"></a>
+</body>
+</html>
+<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<script src="static/js/xiuxiu.js" type="text/javascript"></script>
+<script src="static/js/jquery.lazyload.min.js" type="text/javascript"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="/static/js/bootstrap-ie.js"></script>
+<![endif]-->

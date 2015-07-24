@@ -1,0 +1,109 @@
+/* CSS Document */
+
+.mod-headlines {
+	position:relative;
+	width:730px;
+	height:365px;
+	overflow:hidden;
+}
+.mod-headlines .big-map-wrapper, .mod-headlines .current-map, .mod-headlines .current-map a, .mod-headlines .current-map img {
+	width:730px;
+	height:365px
+}
+.mod-headlines .current-map a, .mod-headlines .current-map img {
+	display:block
+}
+.mod-headlines .nav-map-wrapper {
+	margin:0;
+	padding:0;
+	position:absolute;
+	right:12px;
+	bottom:12px;
+	list-style-type:none;
+}
+.mod-headlines .nav-map-wrapper li {
+	float:left;
+	padding:3px;
+	cursor:pointer
+}
+.mod-headlines .nav-map-wrapper .active {
+	border:2px solid #41a7cb;
+	padding:1px
+}
+.mod-headlines .nav-map-wrapper a, .mod-headlines .nav-map-wrapper img {
+	display:block;
+	position:relative;
+	width:80px;
+	height:40px
+}
+.mod-headlines .nav-map-wrapper .float-layer {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:1000;
+	background:#000;
+	opacity:.3;
+	filter:alpha(opacity=30);
+	width:80px;
+	height:40px
+}
+.mod-headlines .article-wrapper {
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:730px;
+	height:70px;
+	color:#fff
+}
+.mod-headlines .article-wrapper .mask {
+	position:absolute;
+	left:0;
+	top:0;
+	width:730px;
+	height:70px;
+	background:#000;
+	opacity:.7;
+	filter:alpha(opacity=70)
+}
+.mod-headlines .article-wrapper .mask-border {
+	position:absolute;
+	left:0;
+	top:1px;
+	width:730px;
+	height:1px;
+	overflow:hidden;
+	background:#fff;
+	opacity:.1;
+	filter:alpha(opacity=10)
+}
+.mod-headlines .article-wrapper .article-header {
+	padding-left:16px;
+	padding-right:16px;
+	font-size:22px;
+	font-weight:normal;
+	width:330px;
+	height:25px;
+	padding-top:10px;
+	line-height:25px;
+	overflow:hidden;
+	font-family:Tahoma, Helvetica, "微软雅黑", arial, serif;
+	position:relative;
+	z-index:1
+}
+.mod-headlines .article-wrapper .article-header a {
+	color:#fff
+}
+.mod-headlines .article-wrapper .article-desc {
+	padding-left:16px;
+	padding-right:16px;
+	width:330px;
+	font-size:12px;
+	line-height:18px;
+	height:18px;
+	overflow:hidden;
+	position:relative;
+	z-index:1
+}
+.mod-headlines .article-wrapper .article-desc a {
+	color:#fff
+}

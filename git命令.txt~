@@ -1,15 +1,14 @@
-…or create a new repository on the command line
-
-echo "# task" >> README.md
+初次使用：
 git init
-git add README.md
+git add .    //上传全部文件
 git commit -m "first commit"
 git remote add origin https://github.com/c295655244/task.git
 git push -u origin master
-…or push an existing repository from the command line
 
+之后提交：
+git add . 
 git remote add origin https://github.com/c295655244/task.git
 git push -u origin master
-…or import code from another repository
 
-You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+常见问题:
+http://www.open-open.com/lib/view/open1366080269265.html

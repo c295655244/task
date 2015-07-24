@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { background-image:url(bg.jpg); background-color:#F7F0E0;}
+.main_blog { background-image:url(repeat_bg.png);}
+.other_body_bg {background-image:url(other_bg.jpg); background-repeat:no-repeat; background-color:#FAF3E1;}
+.other_top {background-image:url(top_bg.jpg);}
+a { color:#885A62;}
