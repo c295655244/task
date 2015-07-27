@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import socket
-address=('172.29.153.174',10000)
+address=('172.26.253.3',10000)
 s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 s.bind(address)
 while 1:

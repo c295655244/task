@@ -7,7 +7,7 @@ git push -u origin master
 
 之后提交：
 git add . 
-git remote add origin https://github.com/c295655244/task.git
+git commit -m "first commit"
 git push -u origin master
 
 常见问题:

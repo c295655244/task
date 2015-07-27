@@ -1,1 +1,2 @@
 chmod +x ./test.sh  给予权限
+sar -n DEV 1

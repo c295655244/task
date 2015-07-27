@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#删除容器脚本
 while read myline  
 do  
 	#echo "LINE:"$myline 
